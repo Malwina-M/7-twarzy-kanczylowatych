@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Galeria</title>
+<meta charset=utf-8>
+
+
+<style>
+body {background-color: #be9b39;}
+
+</style>
+
+
+<body>
+
+    <a href="../7%20-%20I12/index.html">Strona główna</a>
+
+<hr>
+
+    <span id="heading"><b>Galeria</b></span>
+    <hr>
+<div id="slider">  
+<div class="slides">  
+  <img src="foto/kf.jpg" width="100%" />
+ </div>
+  
+  <div class="slides">  
+  <img src="foto/wa.jpg" width="100%" />
+</div>
+  
+<div class="slides">  
+  <img src="foto/kj.jpg" width="100%" />
+</div>  
+
+<div class="slides">  
+  <img src="foto/kż.jpg" width="100%" />
+</div>  
+
+  <div class="slides">  
+  <img src="foto/ks.jpg" width="100%" />
+</div> 
+  
+   <div class="slides">  
+  <img src="foto/ko.jpg" width="100%" />
+</div> 
+  
+<div class="slides">  
+  <img src="foto/kb.jpg" width="100%" />
+</div>  
+ 
+
+  
+  <div id="dot"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+ </div>
+
+
+ <script>
+ var index = 0;
+ var slides = document.querySelectorAll(".slides");
+ var dot = document.querySelectorAll(".dot");
+ 
+ function changeSlide(){
+ 
+   if(index<0){
+     index = slides.length-1;
+   }
+   
+   if(index>slides.length-1){
+     index = 0;
+   }
+   
+   for(let i=0;i<slides.length;i++){
+     slides[i].style.display = "none";
+     dot[i].classList.remove("active");
+   }
+   
+   slides[index].style.display= "block";
+   dot[index].classList.add("active");
+   
+   index++;
+   
+   setTimeout(changeSlide,2000);
+   
+ }
+ 
+ changeSlide();
+</script>
+
+</body>
+</html>
